@@ -10,6 +10,10 @@ import { protect } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
+router.get("/", (req, res) => {
+  res.send("Taskfyer API is running"); 
+});
+
 router.post("/task/create", protect, createTask);
 router.get("/tasks", protect, getTasks);
 router.get("/task/:id", protect, getTask);
